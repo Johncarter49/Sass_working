@@ -4,19 +4,71 @@
 }
 
 $primaryColor: #44ffd7;
+$textColor: red;
+$widthButton: 100px;
 
 nav{
-    background-color: $primaryColor;
+    background-color: gray;
+
+    &::after{
+        clear: both;
+        content: "";
+        display: block;
+    }
 }
 .left{
     list-style: none;
+    float: left;
     li{
         $secondaryColor: darkgreen !global;
         display: inline-block;
         margin: 25px;
-        background-color: $secondaryColor;
+        background-color: $primaryColor;
+        
+        &:first-child{
+            margin: 0px;
+        }
+        a{
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $textColor;
+            display: inline-block;
+            padding: 10px;
+        }
     }
-    li:first-child{
-        margin: 0px;
+}
+
+p{
+    background-color: $secondaryColor;
+}
+
+.right{
+    float: right;
+}
+
+.cw, .linkedin{
+  padding: 10px;
+  display: inline-block;
+  width: $widthButton;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $textColor;  
+}
+
+.cw{
+    &:link{
+        background-color: $primaryColor;
     }
+    &:hover{
+        background-color: darken($primaryColor,20%);
+    }
+}
+
+.linkedin{
+    &:link{
+        background-color: $primaryColor;
+    }
+    &:hover{
+        background-color: darken($primaryColor,20%);
+    }   
 }
